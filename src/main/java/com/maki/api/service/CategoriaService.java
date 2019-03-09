@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.maki.api.model.Categoria;
 import com.maki.api.repository.CategoriaRepository;
 import com.maki.api.service.exceptions.DataIntegrityException;
+import com.maki.api.service.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -22,10 +23,12 @@ public class CategoriaService {
 	 * @param id
 	 * @return
 	 */
-	public Optional<Categoria> findById(Integer id) {		
+	public Categoria find(Integer id) {
 		Optional<Categoria> obj = categoriaRepository.findById(id);
-		return obj;
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
+	
 	
 	/**
 	 * 
@@ -51,7 +54,7 @@ public class CategoriaService {
 	 * @return
 	 */
 	public Categoria update(Categoria categoria) {
-		findById(categoria.getId());
+		find(categoria.getId());
 		return categoriaRepository.save(categoria);
 	}
 	
@@ -60,7 +63,7 @@ public class CategoriaService {
 	 * @param id
 	 */
 	public void delete(Integer id) {
-		findById(id);
+		find(id);
 		try {
 			categoriaRepository.deleteById(id);
 			

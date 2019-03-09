@@ -2,7 +2,6 @@ package com.maki.api.resource;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -21,7 +20,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.maki.api.model.Categoria;
 import com.maki.api.service.CategoriaService;
 
-import javassist.tools.rmi.ObjectNotFoundException;
 
 @RestController
 @RequestMapping("/categorias")
@@ -31,8 +29,8 @@ public class CategoriaResource {
 	private CategoriaService categoriaService;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Categoria>> find(@PathVariable Integer id ) throws ObjectNotFoundException {
-		Optional<Categoria> obj  = categoriaService.findById(id);			
+	public ResponseEntity<Categoria> find(@PathVariable Integer id) {
+		Categoria obj = categoriaService.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
