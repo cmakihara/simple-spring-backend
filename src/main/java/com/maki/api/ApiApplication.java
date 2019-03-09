@@ -1,4 +1,4 @@
-package com.maki.curso;
+package com.maki.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

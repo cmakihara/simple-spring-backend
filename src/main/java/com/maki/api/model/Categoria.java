@@ -1,4 +1,4 @@
-package com.maki.curso.model;
+package com.maki.api.model;
 
 import java.io.Serializable;
 
