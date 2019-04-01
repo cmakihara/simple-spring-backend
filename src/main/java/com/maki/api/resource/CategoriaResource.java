@@ -2,6 +2,7 @@ package com.maki.api.resource;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.maki.api.dto.CategoriaDTO;
 import com.maki.api.model.Categoria;
 import com.maki.api.service.CategoriaService;
 
@@ -35,9 +37,10 @@ public class CategoriaResource {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Categoria>> findAll() {
+	public ResponseEntity<List<CategoriaDTO>> findAll() {
 		List<Categoria> listaCategoria = categoriaService.findAll();
-		return ResponseEntity.ok().body(listaCategoria);
+		List<CategoriaDTO> listaDto = listaCategoria.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listaDto);
 	}
 	
 	@PostMapping
