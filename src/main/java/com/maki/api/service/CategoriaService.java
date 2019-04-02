@@ -58,10 +58,16 @@ public class CategoriaService {
 	 * @return
 	 */
 	public Categoria update(Categoria categoria) {
-		find(categoria.getId());
-		return categoriaRepository.save(categoria);
+		Categoria newObj = find(categoria.getId());
+		updateData(newObj, categoria);
+		return categoriaRepository.save(newObj);
 	}
 	
+	private void updateData(Categoria newObj, Categoria categoria) {
+		newObj.setNome(categoria.getNome());
+	}
+
+
 	/**
 	 * 
 	 * @param id
