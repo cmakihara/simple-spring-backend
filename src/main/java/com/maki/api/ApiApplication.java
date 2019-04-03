@@ -80,17 +80,17 @@ public class ApiApplication implements CommandLineRunner {
 		Categoria cat7 = new Categoria(null, "Perfumaria");
 		
 		
-		Produto p1 = new Produto(null, "Computador", new BigDecimal(2.00));
-		Produto p2 = new Produto(null, "Impressora", new BigDecimal(800.00));
-		Produto p3 = new Produto(null, "Mouse", new BigDecimal(80.00));
-		Produto p4 = new Produto(null, "Mesa de escritório", new BigDecimal(300.00));
-		Produto p5 = new Produto(null, "Toalha", new BigDecimal(50.00));
-		Produto p6 = new Produto(null, "Colcha", new BigDecimal(200.00));
-		Produto p7 = new Produto(null, "TV true color", new BigDecimal(1200.00));
-		Produto p8 = new Produto(null, "Roçadeira",new BigDecimal( 800.00));
-		Produto p9 = new Produto(null, "Abajour", new BigDecimal(100.00));
-		Produto p10 = new Produto(null, "Pendente", new BigDecimal(180.00));
-		Produto p11 = new Produto(null, "Shampoo", new BigDecimal(90.00));
+		Produto p1 = new Produto(null, "Computador", 2.00);
+		Produto p2 = new Produto(null, "Impressora", 800.00);
+		Produto p3 = new Produto(null, "Mouse", 80.00);
+		Produto p4 = new Produto(null, "Mesa de escritório", 300.00);
+		Produto p5 = new Produto(null, "Toalha", 50.00);
+		Produto p6 = new Produto(null, "Colcha", 200.00);
+		Produto p7 = new Produto(null, "TV true color", 1200.00);
+		Produto p8 = new Produto(null, "Roçadeira", 800.00);
+		Produto p9 = new Produto(null, "Abajour", 100.00);
+		Produto p10 = new Produto(null, "Pendente", 180.00);
+		Produto p11 = new Produto(null, "Shampoo", 90.00);
 		
 		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2));

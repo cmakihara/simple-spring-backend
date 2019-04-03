@@ -11,7 +11,7 @@ public class ProdutoDTO implements Serializable{
 
 	private Integer id;
 	private String nome;
-	private BigDecimal preco;
+	private double preco;
 
 	public ProdutoDTO() {
 		// TODO Auto-generated constructor stub
@@ -39,11 +39,11 @@ public class ProdutoDTO implements Serializable{
 		this.nome = nome;
 	}
 
-	public BigDecimal getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(BigDecimal preco) {
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 	

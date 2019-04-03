@@ -29,7 +29,7 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private BigDecimal preco;
+	private double preco;
 	
 	@JsonIgnore
 	@ManyToMany
@@ -58,11 +58,11 @@ public class Produto implements Serializable {
 		this.nome = nome;
 	}
 
-	public BigDecimal getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(BigDecimal preco) {
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 
@@ -86,7 +86,7 @@ public class Produto implements Serializable {
 		this.itens = itens;
 	}
 	
-	public Produto(Integer id, String nome, BigDecimal preco) {
+	public Produto(Integer id, String nome, double preco) {
 		super();
 		this.id = id;
 		this.nome = nome;

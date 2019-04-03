@@ -2,30 +2,32 @@ package com.maki.api.model;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.maki.api.model.enums.EstadoPagamento;
 
 @Entity
+@JsonTypeName("pagamentoComCartao")
 public class PagamentoComCartao extends Pagamento {
 
 	private static final long serialVersionUID = 1L;
 	
-	private Integer numerosDeParcelas;
+	private Integer numeroDeParcelas;
 	
 	public PagamentoComCartao() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PagamentoComCartao(Integer id, EstadoPagamento estado, Pedido pedido, Integer numerosDeParcelas) {
+	public PagamentoComCartao(Integer id, EstadoPagamento estado, Pedido pedido, Integer numeroDeParcelas) {
 		super(id, estado, pedido);
-		this.numerosDeParcelas = numerosDeParcelas;
+		this.numeroDeParcelas = numeroDeParcelas;
 	}
 
 	public Integer getNumerosDeParcelas() {
-		return numerosDeParcelas;
+		return numeroDeParcelas;
 	}
 
-	public void setNumerosDeParcelas(Integer numerosDeParcelas) {
-		this.numerosDeParcelas = numerosDeParcelas;
+	public void setNumeroDeParcelas(Integer numeroDeParcelas) {
+		this.numeroDeParcelas = numeroDeParcelas;
 	}
 	
 	
