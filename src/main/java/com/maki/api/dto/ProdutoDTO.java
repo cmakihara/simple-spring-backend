@@ -1,7 +1,6 @@
 package com.maki.api.dto;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 import com.maki.api.model.Produto;
 
