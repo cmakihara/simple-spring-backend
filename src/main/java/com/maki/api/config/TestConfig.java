@@ -12,16 +12,15 @@ import com.maki.api.service.DBService;
 @Configuration
 @Profile("test")
 public class TestConfig {
-	
-	
+
 	@Autowired
 	private DBService dbService;
-	
+
 	@Bean
 	public boolean instantiateDataBase() throws ParseException {
-		
+
 		dbService.instantiateTestDataBase();
-		
+
 		return true;
 	}
 }
