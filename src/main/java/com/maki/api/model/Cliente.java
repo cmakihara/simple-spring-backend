@@ -53,7 +53,7 @@ public class Cliente implements Serializable {
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
 	
-	@ElementCollection(fetch = FetchType.EAGER)
+	@ElementCollection(fetch=FetchType.EAGER)
 	@CollectionTable(name="PERFIS")
 	private Set<Integer> perfis = new HashSet<>();
 	
@@ -145,7 +145,7 @@ public class Cliente implements Serializable {
 		this.senha = senha;
 	}
 	
-	public Set<Perfil> getPerfil() {
+	public Set<Perfil> getPerfis() {
 		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
 	}
 	
