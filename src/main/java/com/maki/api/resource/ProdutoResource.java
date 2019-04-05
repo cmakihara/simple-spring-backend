@@ -17,7 +17,7 @@ import com.maki.api.resource.utils.URL;
 import com.maki.api.service.ProdutoService;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/api/produtos")
 public class ProdutoResource {
 	
 	@Autowired

@@ -26,7 +26,7 @@ import com.maki.api.model.Cliente;
 import com.maki.api.service.ClienteService;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/api/clientes")
 public class ClienteResource {
 	
 	@Autowired

@@ -18,7 +18,7 @@ import com.maki.api.model.Pedido;
 import com.maki.api.service.PedidoService;
 
 @RestController
-@RequestMapping("/pedidos")
+@RequestMapping("/api/pedidos")
 public class PedidoResource {
 	
 	@Autowired

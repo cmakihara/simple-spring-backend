@@ -26,7 +26,7 @@ import com.maki.api.service.CategoriaService;
 
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/api/categorias")
 public class CategoriaResource {
 	
 	@Autowired
